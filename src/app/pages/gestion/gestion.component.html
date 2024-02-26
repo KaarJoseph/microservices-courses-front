@@ -1,0 +1,18 @@
+<!-- gestion.component.html -->
+<br><br><br><br><br><br><br>
+<h2>GESTION DE CURSOS</h2>
+<div class="course-list">
+    <div *ngFor="let course of courses" class="course-card">
+      <h2>{{ course.name }}</h2>
+      <p>{{ course.teacher }}</p>
+      <!-- Otros detalles del curso si los tienes -->
+    </div>
+  </div>
+  
+  <!-- Botones de deslogueo y Ver Mis Cursos -->
+  <div class="buttons-container">
+    <button (click)="logout()">Cerrar Sesión</button>
+    <button (click)="verMisCursos()">Ver Mis Cursos</button>
+  </div>
+  
+  

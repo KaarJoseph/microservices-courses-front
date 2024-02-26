@@ -1,0 +1,55 @@
+<div *ngIf="loggedInStudent">
+  <h2>Información del Estudiante</h2>
+  <ng-container *ngIf="loggedInStudent; else noStudentInfo">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Email</th>
+          <th>ID del Curso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ loggedInStudent.id }}</td>
+          <td>{{ loggedInStudent.name }}</td>
+          <td>{{ loggedInStudent.lastname }}</td>
+          <td>{{ loggedInStudent.email }}</td>
+          <td>{{ loggedInStudent.courseId }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  <ng-template #noStudentInfo>
+    <p>No se pudo obtener la información del estudiante.</p>
+  </ng-template>
+</div>
+
+<!-- Información de los Cursos -->
+<div>
+  <h2>Información de los Cursos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID del Curso</th>
+        <th>Nombre del Curso</th>
+        <th>Profesor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iterar sobre todos los cursos -->
+      <tr *ngFor="let course of allCourses">
+        <td>{{ course.id }}</td>
+        <td>{{ course.name }}</td>
+        <td>{{ course.teacher }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <div class="buttons-container">
+  <button type="button" (click)="atras()">Regresar</button>
+  </div>
+</div>

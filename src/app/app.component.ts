@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cursos';
+
+  usuarioAutenticado: boolean = false;
+
+  onAutenticado(autenticado: boolean) {
+    this.usuarioAutenticado = autenticado;
+  }
+
 }
